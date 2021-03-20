@@ -7,7 +7,9 @@ import FakeData from '../FakeData/fakeData.json'
 import './Home.css'
 
 const Home = () => {
+    
     const [transport, setTransport] = useState([]);
+
     useEffect(()=>{
         setTransport(FakeData);
     },[])

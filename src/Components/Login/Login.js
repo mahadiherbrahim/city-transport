@@ -7,7 +7,7 @@ import { useState } from 'react';
 import './Login.css'
 import { useContext } from 'react';
 import { UserContext } from '../../App';
-import { useHistory, useLocation } from 'react-router';
+import { useHistory, useLocation } from 'react-router-dom';
 
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);

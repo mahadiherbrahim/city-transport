@@ -1,10 +1,9 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useParams } from 'react-router';
+import { useEffect,useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Header from '../Header/Header';
 import Map from '../Map/Map';
 import FakeData from '../FakeData/fakeData.json'
-import { useState } from 'react/cjs/react.development';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUsers } from '@fortawesome/free-solid-svg-icons'
 import { faSortAmountDownAlt } from '@fortawesome/free-solid-svg-icons'
@@ -13,6 +12,7 @@ import './DestinationDetails.css'
 
 
 const DestinationDetails = () => {
+
     const { transportName } = useParams()
 
     const [transport, setTransport] = useState({})
@@ -20,9 +20,7 @@ const DestinationDetails = () => {
     useEffect(() => {
         const transportData = FakeData.filter(tp => tp.name === `${transportName}`)
         setTransport(transportData[0])
-    }, [])
-
-
+    }, [transportName])
 
     return (
         <div className="container">

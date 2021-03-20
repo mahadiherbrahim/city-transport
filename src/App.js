@@ -1,12 +1,10 @@
 import React from "react";
-import { useContext } from "react";
-import { createContext } from "react";
+import { createContext,useState } from "react"
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
-import { useState } from "react/cjs/react.development";
 import Destination from "./Components/Destination/Destination";
 import DestinationDetails from "./Components/DestinationDetails/DestinationDetails";
 import Home from "./Components/Home/Home";

@@ -1,10 +1,9 @@
 import React from 'react';
 import './Header.css'
-import logo from '../../images/Urban Riders.png'
+import logo from '../../images/logo.png'
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { UserContext } from '../../App';
-
 
 const Header = () => {
 
@@ -25,10 +24,10 @@ const Header = () => {
                             <Link to="/home" className="nav-link active">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/destination/:name" className="nav-link">Destination</Link>
+                            <Link to="/home" className="nav-link">Destination</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/contact" className="nav-link">Contact</Link>
+                            <Link to="/home" className="nav-link">Contact</Link>
                         </li>
                         
                         <li>
