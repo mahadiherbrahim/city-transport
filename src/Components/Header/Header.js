@@ -19,7 +19,7 @@ const Header = () => {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="navbar-nav">
+                    <ul className="nav navbar-nav">
                         <li className="nav-item">
                             <Link to="/home" className="nav-link active">Home</Link>
                         </li>
@@ -32,7 +32,7 @@ const Header = () => {
                         
                         <li>
                             {
-                                loggedInUser.displayName ? <h6>{loggedInUser.displayName}</h6> : <Link to="/login" className="btn btn-danger">Login</Link>
+                                loggedInUser.email ? <h6>{loggedInUser.displayName}</h6> : <Link to="/login" className="btn btn-danger">Login</Link>
                             }
                         </li>
                     </ul>
