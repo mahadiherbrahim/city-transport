@@ -1,0 +1,10 @@
+.metro-container{
+    background-image: url('../../images/Bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    height: 100vh;
+}
+.card-row{
+    padding-top: 200px;
+}

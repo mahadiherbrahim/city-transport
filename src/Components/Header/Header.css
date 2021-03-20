@@ -1,0 +1,10 @@
+.navbar img{
+    width: 200px;
+}
+.navbar{
+    border-bottom: 1px lightgray;
+    padding-top: 20px;
+}
+.navbar h6{
+    padding-top: 10px;
+}

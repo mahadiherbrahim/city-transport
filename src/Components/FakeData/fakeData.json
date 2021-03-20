@@ -1,0 +1,21 @@
+[{
+    "name": "Bike",
+    "photo" : "https://i.ibb.co/3MhdN1z/Frame.png",
+    "price": "46$",
+    "passengers": 2
+  }, {
+    "name": "Car",
+    "photo": "https://i.ibb.co/hLn7XkV/Frame-2.png",
+    "price": "93$",
+    "passengers": 4
+  }, {
+    "name": "Bus",
+    "photo": "https://i.ibb.co/wrd1QZX/Frame-1.png",
+    "price": "89$",
+    "passengers": 34
+  }, {
+    "name": "Train",    
+    "photo": "https://i.ibb.co/qy7GrwT/Group.png",    
+    "price": "200$",
+    "passengers": 60
+  }]

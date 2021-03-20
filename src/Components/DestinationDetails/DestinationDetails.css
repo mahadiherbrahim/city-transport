@@ -1,0 +1,18 @@
+.destinationDetails{
+    background-color: lightgray;
+    padding: 15px;
+    border-radius: 10px;
+}
+.destinationTransport{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.pick{
+    background-color: tomato;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: white;
+}

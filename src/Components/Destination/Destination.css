@@ -1,0 +1,10 @@
+.search-destination{
+    padding: 40px;
+    background-color: lightgray;
+    border-radius: 10px;
+}
+.destination{
+    border-top: 1px solid lightgray;
+    padding-top: 40px;
+    margin-top: 40px;
+}

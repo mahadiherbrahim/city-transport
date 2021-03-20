@@ -1,0 +1,10 @@
+.card img{
+    width: 200px;
+}
+.transport-card{
+    width:250px;
+    height: 250px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px solid gray;
+}
