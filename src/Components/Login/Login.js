@@ -78,9 +78,9 @@ const Login = () => {
             userValid = validPasswordLength && validPasswordChar
         }
 
-        if(e.target.name === "name"){
-            userValid = /^[a-zA-Z\s]*$/.test(e.target.value)
-        }
+        // if(e.target.name === "name"){
+        //     userValid = /^[a-zA-Z\s]*$/.test(e.target.value)
+        // }
 
         if (userValid) {
             const newUserInfo = { ...user }
@@ -99,17 +99,14 @@ const Login = () => {
                     newUserInfo.error = ''
                     setLoggedInUser(newUserInfo)
                     setUser(newUserInfo)
-                    console.log(newUserInfo);
-                    history.replace(from);
                     updateProfileInfo(user.name)
-                    console.log(user.name);
+                    history.replace(from);
                 })
                 .catch((error) => {
                     const newUserInfo = {}
                     newUserInfo.success = false
                     newUserInfo.error = error.message
                     setUser(newUserInfo)
-                    console.log(error.message);
                 });
         }
 
@@ -184,7 +181,7 @@ const Login = () => {
                     {
                         user.success &&
                         <p className="alert alert-primary m-2" role="alert">
-                            Successfully {newUser ? 'create' : 'Login'} a user! Thank You {user.name}
+                            Successfully {newUser ? 'create a account. Now You Can Login Your Account' : 'Login a user! Thank You'}
                         </p>
                     }
                     <h6 className="alert-danger m-2" role="alert">
@@ -197,5 +194,4 @@ const Login = () => {
         </div>
     );
 };
-
 export default Login;

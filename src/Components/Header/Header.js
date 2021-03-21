@@ -29,10 +29,9 @@ const Header = () => {
                         <li className="nav-item">
                             <Link to="/home" className="nav-link">Contact</Link>
                         </li>
-                        
                         <li>
                             {
-                                loggedInUser.email ? <h6>{loggedInUser.displayName}</h6> : <Link to="/login" className="btn btn-danger">Login</Link>
+                                loggedInUser.email ? <h6>Welcome {loggedInUser.name||loggedInUser.email}</h6> : <Link to="/login" className="btn btn-danger">Login</Link>
                             }
                         </li>
                     </ul>
