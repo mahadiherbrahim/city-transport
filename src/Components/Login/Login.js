@@ -36,9 +36,30 @@ const Login = () => {
         success: false
     })
 
+    const githubProvider = new firebase.auth.GithubAuthProvider();
+    const handleGithubSign = () => {
+        firebase
+            .auth()
+            .signInWithPopup(githubProvider)
+            .then((result) => {
+                const { displayName, email } = result.user;
+                const githubData = {
+                    name: displayName,
+                    email: email,
+                    success: true,
+                    error: ''
+                }
+                setUser(githubData)
+                setLoggedInUser(githubData)
+                history.replace(from);
+            }).catch((error) => {
+                console.log(error.message);
+            });
+    }
+
+
     const googleProvider = new firebase.auth.GoogleAuthProvider();
-    const facebookProvider = new firebase.auth.FacebookAuthProvider();
-    
+
     const handleGoogleSign = () => {
         firebase.auth()
             .signInWithPopup(googleProvider)
@@ -62,18 +83,21 @@ const Login = () => {
             });
     }
 
+
+
+    const facebookProvider = new firebase.auth.FacebookAuthProvider();
     const handleFacebookSign = () => {
         firebase.auth().signInWithPopup(facebookProvider)
             .then((result) => {
                 const { displayName, email } = result.user;
-                const googleUserData = {
+                const facebookData = {
                     name: displayName,
                     email: email,
                     success: true,
                     error: ''
                 }
-                setUser(googleUserData)
-                setLoggedInUser(googleUserData)
+                setUser(facebookData)
+                setLoggedInUser(facebookData)
                 history.replace(from);
             })
             .catch((error) => {
@@ -142,9 +166,7 @@ const Login = () => {
                     newUserInfo.error = ''
                     setLoggedInUser(newUserInfo)
                     setUser(newUserInfo)
-                    console.log(newUserInfo);
                     history.replace(from);
-                    console.log(res.user);
                 })
                 .catch((error) => {
                     const newUserInfo = {}
@@ -203,6 +225,7 @@ const Login = () => {
                     <br />
                     <button onClick={handleGoogleSign} className="btn btn-outline-primary  btn-block btn-google">Google Sign In</button>
                     <button onClick={handleFacebookSign} className="btn btn-outline-primary  btn-block btn-google">Facebook Sign In</button>
+                    <button onClick={handleGithubSign} className="btn btn-outline-primary  btn-block btn-google">GitHub Sign In</button>
                     {
                         user.success &&
                         <p className="alert alert-primary m-2" role="alert">

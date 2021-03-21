@@ -9,12 +9,12 @@ Than input your Destination
 After that you can see your rent, transport picture and allow passengers details.
 Then let's go and enjoy your journey
 
-### Tools
+# Tools
 
-React
-React Route
-Firebase
-Bootstrap
-Font-awesome
+### React
+### React Route
+### Firebase
+### Bootstrap
+### Font-awesome
 
 
