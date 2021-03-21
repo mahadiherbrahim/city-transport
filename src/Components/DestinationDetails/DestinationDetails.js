@@ -29,9 +29,9 @@ const DestinationDetails = () => {
                 <div className="col-md-4">
                     <div className="destinationDetails">
                         <div className="pick">
-                            <h5><FontAwesomeIcon icon={faSortAmountDownAlt} /> Mirpur</h5>
+                            <h5><FontAwesomeIcon icon={faSortAmountDownAlt} /> Dhaka</h5>
                             <br/>
-                            <h5><FontAwesomeIcon icon={faSortAmountUpAlt} /> Banani</h5>
+                            <h5><FontAwesomeIcon icon={faSortAmountUpAlt} /> Sylhet</h5>
                         </div>
                         <div className="destinationTransport">
                             <div className="d-flex justify-content-around align-items-center">

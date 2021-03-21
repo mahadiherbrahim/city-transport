@@ -18,7 +18,7 @@ const Home = () => {
         <div className=" metro-container">
             <div className="container">
                 <Header/>
-                <div className="row card-row">
+                <div className="row card-row text-center">
                     {
                         transport.map(tr => <TransportCard transport={tr}></TransportCard>)
                     }
