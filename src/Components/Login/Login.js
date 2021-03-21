@@ -37,6 +37,8 @@ const Login = () => {
     })
 
     const googleProvider = new firebase.auth.GoogleAuthProvider();
+    const facebookProvider = new firebase.auth.FacebookAuthProvider();
+    
     const handleGoogleSign = () => {
         firebase.auth()
             .signInWithPopup(googleProvider)
@@ -53,13 +55,35 @@ const Login = () => {
                 history.replace(from);
             }).catch((error) => {
                 const newUserInfo = {}
-                    newUserInfo.success = false
-                    newUserInfo.error = error.message
-                    setUser(newUserInfo)
-                    console.log(error.message);
+                newUserInfo.success = false
+                newUserInfo.error = error.message
+                setUser(newUserInfo)
+                console.log(error.message);
             });
     }
 
+    const handleFacebookSign = () => {
+        firebase.auth().signInWithPopup(facebookProvider)
+            .then((result) => {
+                const { displayName, email } = result.user;
+                const googleUserData = {
+                    name: displayName,
+                    email: email,
+                    success: true,
+                    error: ''
+                }
+                setUser(googleUserData)
+                setLoggedInUser(googleUserData)
+                history.replace(from);
+            })
+            .catch((error) => {
+                const newUserInfo = {}
+                newUserInfo.success = false
+                newUserInfo.error = error.message
+                setUser(newUserInfo)
+                console.log(error.message);
+            });
+    }
 
     const handleValidation = (e) => {
 
@@ -89,7 +113,7 @@ const Login = () => {
         }
     }
 
-   
+
     const handleRegistration = (e) => {
         if (newUser && user.email && user.password) {
             firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
@@ -178,6 +202,7 @@ const Login = () => {
                     </form>
                     <br />
                     <button onClick={handleGoogleSign} className="btn btn-outline-primary  btn-block btn-google">Google Sign In</button>
+                    <button onClick={handleFacebookSign} className="btn btn-outline-primary  btn-block btn-google">Facebook Sign In</button>
                     {
                         user.success &&
                         <p className="alert alert-primary m-2" role="alert">
